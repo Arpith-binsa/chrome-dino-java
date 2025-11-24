@@ -26,6 +26,10 @@ import manager.SoundManager;
 import misc.GameState;
 
 public class Score {
+
+    public int getCurrentScore() {
+        return score;
+    }
 	
 	// value by which score is increasing
 	private static final double SCORE_INC = 0.1;

@@ -16,166 +16,231 @@ import misc.Controls;
 import misc.DinoState;
 
 public class Dino {
-	
-	// values to subtract from x, y, width, height to get accurate hitbox
-	private static final int[] HITBOX_RUN = {12, 26, -32, -42};
-	private static final int[] HITBOX_DOWN_RUN = {24, 8, -60, -24};
-	
-	public static final double X = 120;
-	
-	Controls controls;
-	
-	private double maxY;
-	private double highJumpMaxY;
-	private double lowJumpMaxY;
-	
-	private double y = 0;
-	private double speedY = 0;
-	
-	private DinoState dinoState;
-	private BufferedImage dinoJump;
-	private BufferedImage dinoDead;
-	private Animation dinoRun;
-	private Animation dinoDownRun;
-	private SoundManager jumpSound;
-	
-	public Dino(Controls controls) {
-		this.controls = controls;
-		dinoRun = new Animation(150);
-		dinoRun.addSprite(getImage("resources/dino-run-1.png"));
-		dinoRun.addSprite(getImage("resources/dino-run-2.png"));
-		dinoDownRun = new Animation(150);
-		dinoDownRun.addSprite(getImage("resources/dino-down-run-1.png"));
-		dinoDownRun.addSprite(getImage("resources/dino-down-run-2.png"));
-		dinoJump = getImage("resources/dino-jump.png");
-		dinoDead = getImage("resources/dino-dead.png");
-		jumpSound = new SoundManager("resources/jump.wav");
-		jumpSound.startThread();
-		y = GROUND_Y - dinoJump.getHeight();
-		maxY = y;
-		highJumpMaxY = setJumpMaxY(GRAVITY);
-		lowJumpMaxY = setJumpMaxY(GRAVITY + GRAVITY / 2);
-		dinoState = DinoState.DINO_JUMP;
-	}
-	
-	public DinoState getDinoState() {
-		return dinoState;
-	}
 
-	public void setDinoState(DinoState dinoState) {
-		this.dinoState = dinoState;
-	}
-	
-	public double setJumpMaxY(double gravity) {
-		speedY = SPEED_Y;
-		y += speedY;
-		double jumpMaxY = y;
-		while(true) {
-			speedY += gravity;
-			y += speedY;
-			if(y < jumpMaxY)
-				jumpMaxY = y;
-			if(y + speedY >= GROUND_Y - dinoRun.getSprite().getHeight()) {
-				speedY = 0;
-				y = GROUND_Y - dinoRun.getSprite().getHeight();
-				break;
-			}
-		}
-		return jumpMaxY;
-	}
+    // values to subtract from x, y, width, height to get accurate hitbox
+    private static final int[] HITBOX_RUN = {12, 26, -32, -42};
+    private static final int[] HITBOX_DOWN_RUN = {24, 8, -60, -24};
 
-	public Rectangle getHitbox() {
-		switch (dinoState) {
-		case DINO_RUN:
-		case DINO_JUMP:
-		case DINO_DEAD:
-			return new Rectangle((int)X + HITBOX_RUN[0], (int)y + HITBOX_RUN[1], 
-					dinoDead.getWidth() + HITBOX_RUN[2], dinoDead.getHeight() + HITBOX_RUN[3]);
-		case DINO_DOWN_RUN:
-			return new Rectangle((int)X + HITBOX_DOWN_RUN[0], (int)y + HITBOX_DOWN_RUN[1], 
-					dinoDownRun.getSprite().getWidth() + HITBOX_DOWN_RUN[2], dinoDownRun.getSprite().getHeight() + HITBOX_DOWN_RUN[3]);
-		}
-		return null;
-	}
-	
-	public void updatePosition() {
-		if(y < maxY)
-			maxY = y;
-		dinoRun.updateSprite();
-		dinoDownRun.updateSprite();
-		switch (dinoState) {
-		case DINO_RUN:
-			y = GROUND_Y - dinoRun.getSprite().getHeight();
-			maxY = y;
-			break;
-		case DINO_DOWN_RUN:
-			y = GROUND_Y - dinoDownRun.getSprite().getHeight();
-			break;
-		case DINO_JUMP:
-			if(y + speedY >= GROUND_Y - dinoRun.getSprite().getHeight()) {
-				speedY = 0;
-				y = GROUND_Y - dinoRun.getSprite().getHeight();
-				dinoState = DinoState.DINO_RUN;
-			} else if(controls.isPressedUp()) {
-				speedY += GRAVITY;
-				y += speedY;
-			} else {
-				if(maxY <= lowJumpMaxY - (lowJumpMaxY - highJumpMaxY) / 2)
-					speedY += GRAVITY;
-				else
-					speedY += GRAVITY + GRAVITY / 2;
-				if(controls.isPressedDown())
-					speedY += GRAVITY;
-				y += speedY;
-			}
-			break;
-		default:
-			break;
-		}
-		
-	}
-	
-	public void jump() {
-		if(y == GROUND_Y - dinoRun.getSprite().getHeight()) {
-			jumpSound.play();
-			speedY = SPEED_Y;
-			y += speedY;
-		}
-	}
-	
-	public void resetDino() {
-		y = GROUND_Y - dinoJump.getHeight();
-		dinoState = DinoState.DINO_RUN;
-	}
-	
-	public void dinoGameOver() {
-		if(y > GROUND_Y - dinoDead.getHeight())
-			y = GROUND_Y - dinoDead.getHeight();
-		dinoState = DinoState.DINO_DEAD;
-	}
-	
-	public void draw(Graphics g) {
-		switch (dinoState) {
-		case DINO_RUN:
-			g.drawImage(dinoRun.getSprite(), (int)X, (int)y, null);
-			break;
-		case DINO_DOWN_RUN:
-			g.drawImage(dinoDownRun.getSprite(), (int)X, (int)y, null);
-			break;
-		case DINO_JUMP:
-			g.drawImage(dinoJump, (int)X, (int)y, null);
-			break;
-		case DINO_DEAD:
-			g.drawImage(dinoDead, (int)X, (int)y, null);
-			break;
-		default:
-			break;
-		}
-	}
-	
-	public void drawHitbox(Graphics g) {
-		g.setColor(Color.GREEN);
-		g.drawRect(getHitbox().x, getHitbox().y, getHitbox().width, getHitbox().height);
-	}
-	
+    public static final double X = 120;
+
+    Controls controls;
+
+    private double maxY;
+    private double highJumpMaxY;
+    private double lowJumpMaxY;
+
+    private double y = 0;
+    private double speedY = 0;
+
+    // Shield properties
+    private boolean shieldActive = false;
+    private long shieldStartTime = 0;
+    private static final long SHIELD_DURATION = 7000; // 7 seconds
+    private static final long SHIELD_WARNING_TIME = 3000; // Last 3 seconds blink faster
+    private BufferedImage shieldBubble;
+
+    private DinoState dinoState;
+    private BufferedImage dinoJump;
+    private BufferedImage dinoDead;
+    private Animation dinoRun;
+    private Animation dinoDownRun;
+    private SoundManager jumpSound;
+
+    public Dino(Controls controls) {
+        this.controls = controls;
+        dinoRun = new Animation(150);
+        dinoRun.addSprite(getImage("resources/dino-run-1.png"));
+        dinoRun.addSprite(getImage("resources/dino-run-2.png"));
+        dinoDownRun = new Animation(150);
+        dinoDownRun.addSprite(getImage("resources/dino-down-run-1.png"));
+        dinoDownRun.addSprite(getImage("resources/dino-down-run-2.png"));
+        dinoJump = getImage("resources/dino-jump.png");
+        dinoDead = getImage("resources/dino-dead.png");
+        shieldBubble = getImage("resources/Shield.png");
+        jumpSound = new SoundManager("resources/jump.wav");
+        jumpSound.startThread();
+        y = GROUND_Y - dinoJump.getHeight();
+        maxY = y;
+        highJumpMaxY = setJumpMaxY(GRAVITY);
+        lowJumpMaxY = setJumpMaxY(GRAVITY + GRAVITY / 2);
+        dinoState = DinoState.DINO_JUMP;
+    }
+
+    public DinoState getDinoState() {
+        return dinoState;
+    }
+
+    public void setDinoState(DinoState dinoState) {
+        this.dinoState = dinoState;
+    }
+
+    public boolean isShieldActive() {
+        return shieldActive;
+    }
+
+    public void activateShield() {
+        shieldActive = true;
+        shieldStartTime = System.currentTimeMillis();
+    }
+
+    private void updateShield() {
+        if (shieldActive) {
+            long elapsedTime = System.currentTimeMillis() - shieldStartTime;
+            if (elapsedTime >= SHIELD_DURATION + SHIELD_WARNING_TIME) {
+                shieldActive = false;
+            }
+        }
+    }
+
+    private boolean shouldDrawShield() {
+        if (!shieldActive) return false;
+
+        long elapsedTime = System.currentTimeMillis() - shieldStartTime;
+
+        // First 7 seconds: blink 3 times quickly at the start
+        if (elapsedTime < SHIELD_DURATION) {
+            // Blink 3 times in first 0.5 seconds
+            if (elapsedTime < 500) {
+                // Each blink cycle is ~166ms (500ms / 3 blinks)
+                int blinkCycle = (int)(elapsedTime / 83); // 83ms on, 83ms off
+                return blinkCycle % 2 == 0;
+            }
+            // After initial blinks, show solid for remaining time
+            return true;
+        }
+
+        // Last 3 seconds: blink faster and faster
+        long warningTime = elapsedTime - SHIELD_DURATION;
+
+        // Calculate blink speed based on remaining time (gets faster)
+        // Start at 300ms intervals, end at 50ms intervals
+        int blinkInterval = 300 - (int)(warningTime * 250.0 / SHIELD_WARNING_TIME);
+        if (blinkInterval < 50) blinkInterval = 50;
+
+        return (warningTime / blinkInterval) % 2 == 0;
+    }
+
+    public double setJumpMaxY(double gravity) {
+        speedY = SPEED_Y;
+        y += speedY;
+        double jumpMaxY = y;
+        while(true) {
+            speedY += gravity;
+            y += speedY;
+            if(y < jumpMaxY)
+                jumpMaxY = y;
+            if(y + speedY >= GROUND_Y - dinoRun.getSprite().getHeight()) {
+                speedY = 0;
+                y = GROUND_Y - dinoRun.getSprite().getHeight();
+                break;
+            }
+        }
+        return jumpMaxY;
+    }
+
+    public Rectangle getHitbox() {
+        switch (dinoState) {
+            case DINO_RUN:
+            case DINO_JUMP:
+            case DINO_DEAD:
+                return new Rectangle((int)X + HITBOX_RUN[0], (int)y + HITBOX_RUN[1],
+                        dinoDead.getWidth() + HITBOX_RUN[2], dinoDead.getHeight() + HITBOX_RUN[3]);
+            case DINO_DOWN_RUN:
+                return new Rectangle((int)X + HITBOX_DOWN_RUN[0], (int)y + HITBOX_DOWN_RUN[1],
+                        dinoDownRun.getSprite().getWidth() + HITBOX_DOWN_RUN[2], dinoDownRun.getSprite().getHeight() + HITBOX_DOWN_RUN[3]);
+        }
+        return null;
+    }
+
+    public void updatePosition() {
+        if(y < maxY)
+            maxY = y;
+        dinoRun.updateSprite();
+        dinoDownRun.updateSprite();
+        updateShield();
+        switch (dinoState) {
+            case DINO_RUN:
+                y = GROUND_Y - dinoRun.getSprite().getHeight();
+                maxY = y;
+                break;
+            case DINO_DOWN_RUN:
+                y = GROUND_Y - dinoDownRun.getSprite().getHeight();
+                break;
+            case DINO_JUMP:
+                if(y + speedY >= GROUND_Y - dinoRun.getSprite().getHeight()) {
+                    speedY = 0;
+                    y = GROUND_Y - dinoRun.getSprite().getHeight();
+                    dinoState = DinoState.DINO_RUN;
+                } else if(controls.isPressedUp()) {
+                    speedY += GRAVITY;
+                    y += speedY;
+                } else {
+                    if(maxY <= lowJumpMaxY - (lowJumpMaxY - highJumpMaxY) / 2)
+                        speedY += GRAVITY;
+                    else
+                        speedY += GRAVITY + GRAVITY / 2;
+                    if(controls.isPressedDown())
+                        speedY += GRAVITY;
+                    y += speedY;
+                }
+                break;
+            default:
+                break;
+        }
+
+    }
+
+    public void jump() {
+        if(y == GROUND_Y - dinoRun.getSprite().getHeight()) {
+            jumpSound.play();
+            speedY = SPEED_Y;
+            y += speedY;
+        }
+    }
+
+    public void resetDino() {
+        y = GROUND_Y - dinoJump.getHeight();
+        dinoState = DinoState.DINO_RUN;
+        shieldActive = false;
+    }
+
+    public void dinoGameOver() {
+        if(y > GROUND_Y - dinoDead.getHeight())
+            y = GROUND_Y - dinoDead.getHeight();
+        dinoState = DinoState.DINO_DEAD;
+    }
+
+    public void draw(Graphics g) {
+        // Draw dino first
+        switch (dinoState) {
+            case DINO_RUN:
+                g.drawImage(dinoRun.getSprite(), (int)X, (int)y, null);
+                break;
+            case DINO_DOWN_RUN:
+                g.drawImage(dinoDownRun.getSprite(), (int)X, (int)y, null);
+                break;
+            case DINO_JUMP:
+                g.drawImage(dinoJump, (int)X, (int)y, null);
+                break;
+            case DINO_DEAD:
+                g.drawImage(dinoDead, (int)X, (int)y, null);
+                break;
+            default:
+                break;
+        }
+
+        // Draw shield bubble over dino if active and should be visible
+        if (shouldDrawShield()) {
+            // Center the shield around the dino
+            int shieldX = (int)X + (dinoDead.getWidth() / 2) - (shieldBubble.getWidth() / 2);
+            int shieldY = (int)y + (dinoDead.getHeight() / 2) - (shieldBubble.getHeight() / 2);
+            g.drawImage(shieldBubble, shieldX, shieldY, null);
+        }
+    }
+
+    public void drawHitbox(Graphics g) {
+        g.setColor(Color.GREEN);
+        g.drawRect(getHitbox().x, getHitbox().y, getHitbox().width, getHitbox().height);
+    }
+
 }
