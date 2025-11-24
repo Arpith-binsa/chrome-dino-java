@@ -20,7 +20,7 @@ public class EnemyManager {
     private double distanceBetweenEnemies = 750;
     private double cactusesPercentage = 2;
     private double birdsPercentage = 1;
-    private double shieldPercentage = 0.3; // Lower chance for shield
+    private double shieldPercentage = 5.0; // Lower chance for shield
 
     private Cactuses cactuses;
     private Birds birds;
