@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="56157df7-b2f8-42d9-88cd-9043e3906dc1" name="Changes" comment="shield chances increased">
+    <list default="true" id="56157df7-b2f8-42d9-88cd-9043e3906dc1" name="Changes" comment="shield added">
       <change beforePath="$PROJECT_DIR$/dino.jar" beforeDir="false" afterPath="$PROJECT_DIR$/dino.jar" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -85,7 +85,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1763944148650</updated>
-      <workItem from="1763944149691" duration="2616000" />
+      <workItem from="1763944149691" duration="3141000" />
     </task>
     <task id="LOCAL-00001" summary="Added shield feature">
       <option name="closed" value="true" />
@@ -103,7 +103,15 @@
       <option name="project" value="LOCAL" />
       <updated>1763945623265</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="shield added">
+      <option name="closed" value="true" />
+      <created>1763946888147</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1763946888147</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -112,6 +120,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added shield feature" />
     <MESSAGE value="shield chances increased" />
-    <option name="LAST_COMMIT_MESSAGE" value="shield chances increased" />
+    <MESSAGE value="shield added" />
+    <option name="LAST_COMMIT_MESSAGE" value="shield added" />
   </component>
 </project>
