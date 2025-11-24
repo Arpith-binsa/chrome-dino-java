@@ -30,7 +30,6 @@ public class Shield {
             ShieldItem shield = shields.get(i);
             shield.x += gameScreen.getSpeedX();
 
-            // Remove shields that go off screen
             if (shield.x + shieldImage.getWidth() < 0) {
                 shields.remove(i);
                 i--;
