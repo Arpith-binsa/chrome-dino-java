@@ -4,13 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="56157df7-b2f8-42d9-88cd-9043e3906dc1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/game_object/Shield.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game_object/Dino.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game_object/Dino.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game_object/Score.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game_object/Score.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/manager/EnemyManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/manager/EnemyManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/misc/EnemyType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/misc/EnemyType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/user_interface/GameScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/user_interface/GameScreen.java" afterDir="false" />
+    <list default="true" id="56157df7-b2f8-42d9-88cd-9043e3906dc1" name="Changes" comment="shield chances increased">
+      <change beforePath="$PROJECT_DIR$/dino.jar" beforeDir="false" afterPath="$PROJECT_DIR$/dino.jar" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +40,9 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.GameWindow.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
@@ -53,9 +50,26 @@
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RunManager">
+    <configuration name="GameWindow" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="user_interface.GameWindow" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="user_interface.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -71,11 +85,33 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1763944148650</updated>
-      <workItem from="1763944149691" duration="1157000" />
+      <workItem from="1763944149691" duration="2616000" />
     </task>
+    <task id="LOCAL-00001" summary="Added shield feature">
+      <option name="closed" value="true" />
+      <created>1763945433123</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1763945433123</updated>
+    </task>
+    <task id="LOCAL-00002" summary="shield chances increased">
+      <option name="closed" value="true" />
+      <created>1763945623265</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1763945623265</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Added shield feature" />
+    <MESSAGE value="shield chances increased" />
+    <option name="LAST_COMMIT_MESSAGE" value="shield chances increased" />
   </component>
 </project>
