@@ -2,6 +2,6 @@ package misc;
 
 public enum EnemyType {
 
-    CACTUS, BIRD, SHIELD;
+    CACTUS, BIRD;
 
 }

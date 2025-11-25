@@ -28,7 +28,7 @@ import misc.GameState;
 public class Score {
 
     public int getCurrentScore() {
-        return score;
+        return (int)score;
     }
 	
 	// value by which score is increasing
@@ -95,7 +95,8 @@ public class Score {
 			// here i check if program is running from jar file so that i know where to store best results
 			// again because of that i use here ClassLoader
 			if(isJar())
-				file = new File(ClassLoader.getSystemClassLoader().getResource("").getPath() + scoreFileName);
+                file = new File(System.getProperty("user.dir") + "/" + scoreFileName);
+
 			else
 				file = scoreFile;
 			try(BufferedWriter bw = new BufferedWriter(new FileWriter(file, true))) {
@@ -111,12 +112,13 @@ public class Score {
 	
 	private void readScore() {
 		// another ClassLoader to know from where to read best scores
-		if(scoreFile.exists() || new File(ClassLoader.getSystemClassLoader().getResource("").getPath() + scoreFileName).exists()) {
+        if(scoreFile.exists() || (isJar() && new File(System.getProperty("user.dir") + "/" + scoreFileName).exists())) {
+
 			String line = "";
 			File file;
 			// again jar file check
 			if(isJar())
-				file = new File(ClassLoader.getSystemClassLoader().getResource("").getPath() + scoreFileName);
+                file = new File(System.getProperty("user.dir") + "/" + scoreFileName);
 			else
 				file = scoreFile;
 			if(file.exists()) {				

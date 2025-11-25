@@ -17,6 +17,7 @@ import game_object.Land;
 import game_object.Score;
 import manager.ControlsManager;
 import manager.EnemyManager;
+import manager.ShieldManager;
 import manager.SoundManager;
 import misc.Controls;
 import misc.DinoState;
@@ -43,6 +44,10 @@ public class GameScreen extends JPanel implements Runnable {
     private boolean introJump = true;
     private boolean showHitboxes = false;
     private boolean collisions = true;
+    
+    // Invincibility frames after shield pops
+    private int invincibilityFrames = 0;
+    private static final int INVINCIBILITY_DURATION = 30; // 0.3 seconds at 100 FPS
 
     private Controls controls;
     private Score score;
@@ -50,8 +55,8 @@ public class GameScreen extends JPanel implements Runnable {
     private Land land;
     private Clouds clouds;
     private EnemyManager eManager;
+    private ShieldManager sManager;
     private SoundManager gameOverSound;
-    private SoundManager shieldSound;
     private ControlsManager cManager;
 
     public GameScreen() {
@@ -62,19 +67,16 @@ public class GameScreen extends JPanel implements Runnable {
         super.add(controls.pressDown);
         super.add(controls.releaseDown);
         super.add(controls.pressDebug);
-//		super.add(controls.releaseDebug);
         super.add(controls.pressPause);
-//		super.add(controls.releaseP);
         cManager = new ControlsManager(controls, this);
         score = new Score(this);
         dino = new Dino(controls);
         land = new Land(this);
         clouds = new Clouds(this);
         eManager = new EnemyManager(this);
+        sManager = new ShieldManager(this, dino); // Pass dino to ShieldManager
         gameOverSound = new SoundManager("resources/dead.wav");
         gameOverSound.startThread();
-        shieldSound = new SoundManager("resources/scoreup.wav"); // Using scoreup sound for shield
-        shieldSound.startThread();
     }
 
     public void startThread() {
@@ -112,7 +114,7 @@ public class GameScreen extends JPanel implements Runnable {
     public GameState getGameState() {
         return gameState;
     }
-
+    
     public int getScore() {
         return score.getCurrentScore();
     }
@@ -140,19 +142,31 @@ public class GameScreen extends JPanel implements Runnable {
                 land.updatePosition();
                 clouds.updatePosition();
                 eManager.updatePosition();
-
-                // Check for shield collection
-                if(eManager.checkShieldCollection(dino)) {
-                    dino.activateShield();
-                    shieldSound.play();
+                sManager.updatePosition();
+                
+                // Decrease invincibility frames
+                if(invincibilityFrames > 0) {
+                    invincibilityFrames--;
                 }
 
-                // Only check collision if shield is not active
-                if(collisions && !dino.isShieldActive() && eManager.isCollision(dino.getHitbox())) {
-                    gameState = GameState.GAME_STATE_OVER;
-                    dino.dinoGameOver();
-                    score.writeScore();
-                    gameOverSound.play();
+                // Check for shield collection
+                if(sManager.checkCollection(dino.getHitbox())) {
+                    dino.activateShield();
+                }
+
+                // Check for collision only if not in invincibility frames
+                if(collisions && invincibilityFrames == 0 && eManager.isCollision(dino.getHitbox())) {
+                    if(dino.hasShield()) {
+                        // Pop the shield and give brief invincibility
+                        dino.popShield();
+                        invincibilityFrames = INVINCIBILITY_DURATION;
+                    } else {
+                        // No shield - game over
+                        gameState = GameState.GAME_STATE_OVER;
+                        dino.dinoGameOver();
+                        score.writeScore();
+                        gameOverSound.play();
+                    }
                 }
                 score.scoreUp();
                 break;
@@ -190,13 +204,17 @@ public class GameScreen extends JPanel implements Runnable {
     private void drawDebugMenu(Graphics g) {
         g.setColor(Color.RED);
         g.drawLine(0, GROUND_Y, getWidth(), GROUND_Y);
-//		clouds.drawHitBox(g);
         dino.drawHitbox(g);
         eManager.drawHitbox(g);
+        sManager.drawHitbox(g);
         String speedInfo = "SPEED_X: " + String.valueOf(Math.round(speedX * 1000D) / 1000D);
         g.drawString(speedInfo, (int)(SCREEN_WIDTH / 100), (int)(SCREEN_HEIGHT / 25));
-        String shieldInfo = "SHIELD: " + (dino.isShieldActive() ? "ACTIVE" : "INACTIVE");
-        g.drawString(shieldInfo, (int)(SCREEN_WIDTH / 100), (int)(SCREEN_HEIGHT / 25) + 15);
+        
+        // Show invincibility frames in debug mode
+        if(invincibilityFrames > 0) {
+            g.setColor(Color.YELLOW);
+            g.drawString("INVINCIBLE: " + invincibilityFrames, (int)(SCREEN_WIDTH / 100), (int)(SCREEN_HEIGHT / 25) + 20);
+        }
     }
 
     private void startScreen(Graphics g) {
@@ -217,6 +235,7 @@ public class GameScreen extends JPanel implements Runnable {
     private void inProgressScreen(Graphics g) {
         clouds.draw(g);
         land.draw(g);
+        sManager.draw(g); // Draw shields before enemies
         eManager.draw(g);
         dino.draw(g);
         score.draw(g);
@@ -252,9 +271,11 @@ public class GameScreen extends JPanel implements Runnable {
             speedX = STARTING_SPEED_X;
             score.scoreReset();
             eManager.clearEnemy();
+            sManager.clearShields();
             dino.resetDino();
             clouds.clearClouds();
             land.resetLand();
+            invincibilityFrames = 0; // Reset invincibility
             gameState = GameState.GAME_STATE_IN_PROGRESS;
         }
     }

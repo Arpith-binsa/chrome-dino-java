@@ -4,9 +4,74 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="56157df7-b2f8-42d9-88cd-9043e3906dc1" name="Changes" comment="">
+    <list default="true" id="56157df7-b2f8-42d9-88cd-9043e3906dc1" name="Changes" comment="trying changes">
+      <change afterPath="$PROJECT_DIR$/src/manager/ShieldManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/all-sprites.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/best-scores.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/bird-fly-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/bird-fly-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/cactus-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/cactus-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/cactus-3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/cactus-4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/cactus-5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/cactus-6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/cactus-7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/cactus-8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/cactus-9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/cloud.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/dead.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/dino-dead.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/dino-down-run-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/dino-down-run-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/dino-jump.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/dino-run-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/dino-run-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/game-over.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/game_object/Birds$Bird.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/game_object/Birds$Bird.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/game_object/Birds.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/game_object/Birds.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/game_object/Cactuses$Cactus.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/game_object/Cactuses$Cactus.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/game_object/Cactuses.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/game_object/Cactuses.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/game_object/Clouds$Cloud.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/game_object/Clouds$Cloud.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/game_object/Clouds.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/game_object/Clouds.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/game_object/Dino.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/game_object/Dino.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/game_object/Land.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/game_object/Land.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/game_object/Score.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/game_object/Score.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/game_object/Shield$ShieldItem.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/game_object/Shield.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/game_object/Shield.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/hi.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/jump.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/land.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/manager/ControlsManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/manager/ControlsManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/manager/EnemyManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/manager/EnemyManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/manager/SoundManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/manager/SoundManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/misc/Animation.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/misc/Animation.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/misc/Controls$PressDebugAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/misc/Controls$PressDebugAction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/misc/Controls$PressDownAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/misc/Controls$PressDownAction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/misc/Controls$PressPauseAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/misc/Controls$PressPauseAction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/misc/Controls$PressUpAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/misc/Controls$PressUpAction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/misc/Controls$ReleaseDownAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/misc/Controls$ReleaseDownAction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/misc/Controls$ReleaseUpAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/misc/Controls$ReleaseUpAction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/misc/Controls.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/misc/Controls.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/misc/DinoState.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/misc/DinoState.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/misc/EnemyType.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/misc/EnemyType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/misc/GameState.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/misc/GameState.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/numbers.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/replay.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/scoreup.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/user_interface/GameScreen.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/user_interface/GameScreen.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/user_interface/GameWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/user_interface/GameWindow.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/util/Resource.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/util/Resource.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dino.jar" beforeDir="false" afterPath="$PROJECT_DIR$/dino.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/best-scores.txt" beforeDir="false" afterPath="$PROJECT_DIR$/resources/best-scores.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game_object/Dino.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game_object/Dino.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game_object/Score.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game_object/Score.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game_object/Shield.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game_object/Shield.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/manager/EnemyManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/manager/EnemyManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/misc/EnemyType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/misc/EnemyType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/user_interface/GameScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/user_interface/GameScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/util/Resource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/Resource.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,24 +104,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.GameWindow.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.GameWindow.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="GameWindow" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="user_interface.GameWindow" />
@@ -88,6 +154,8 @@
       <updated>1763944148650</updated>
       <workItem from="1763944149691" duration="4270000" />
       <workItem from="1763986831732" duration="3000" />
+      <workItem from="1763986916862" duration="413000" />
+      <workItem from="1763988810936" duration="7848000" />
     </task>
     <task id="LOCAL-00001" summary="Added shield feature">
       <option name="closed" value="true" />
@@ -145,7 +213,15 @@
       <option name="project" value="LOCAL" />
       <updated>1763947472923</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="trying changes">
+      <option name="closed" value="true" />
+      <created>1763987103743</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1763987103743</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -156,6 +232,7 @@
     <MESSAGE value="shield chances increased" />
     <MESSAGE value="shield added" />
     <MESSAGE value="bug fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="bug fixes" />
+    <MESSAGE value="trying changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="trying changes" />
   </component>
 </project>
