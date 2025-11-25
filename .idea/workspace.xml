@@ -4,13 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="56157df7-b2f8-42d9-88cd-9043e3906dc1" name="Changes" comment="bubble audio added">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+    <list default="true" id="56157df7-b2f8-42d9-88cd-9043e3906dc1" name="Changes" comment="proper wav files">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/game_object/Dino.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/game_object/Dino.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/manager/ShieldManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/manager/ShieldManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/user_interface/GameScreen.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/user_interface/GameScreen.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/BubblePop.wav" beforeDir="false" afterPath="$PROJECT_DIR$/resources/BubblePop.wav" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +90,7 @@
       <workItem from="1763944149691" duration="4270000" />
       <workItem from="1763986831732" duration="3000" />
       <workItem from="1763986916862" duration="413000" />
-      <workItem from="1763988810936" duration="8657000" />
+      <workItem from="1763988810936" duration="9884000" />
     </task>
     <task id="LOCAL-00001" summary="Added shield feature">
       <option name="closed" value="true" />
@@ -177,7 +172,15 @@
       <option name="project" value="LOCAL" />
       <updated>1764052257031</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="proper wav files">
+      <option name="closed" value="true" />
+      <created>1764053069639</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1764053069639</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -191,6 +194,7 @@
     <MESSAGE value="trying changes" />
     <MESSAGE value="shield working" />
     <MESSAGE value="bubble audio added" />
-    <option name="LAST_COMMIT_MESSAGE" value="bubble audio added" />
+    <MESSAGE value="proper wav files" />
+    <option name="LAST_COMMIT_MESSAGE" value="proper wav files" />
   </component>
 </project>
