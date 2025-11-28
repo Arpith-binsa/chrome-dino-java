@@ -4,8 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="56157df7-b2f8-42d9-88cd-9043e3906dc1" name="Changes" comment="proper wav files">
+    <list default="true" id="56157df7-b2f8-42d9-88cd-9043e3906dc1" name="Changes" comment="deleted bubble equip">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/game_object/Dino.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/game_object/Dino.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/manager/ShieldManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/manager/ShieldManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/user_interface/GameScreen$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/user_interface/GameScreen$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/user_interface/GameScreen.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/user_interface/GameScreen.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/best-scores.txt" beforeDir="false" afterPath="$PROJECT_DIR$/resources/best-scores.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game_object/Dino.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game_object/Dino.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/manager/ShieldManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/manager/ShieldManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/user_interface/GameScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/user_interface/GameScreen.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +98,7 @@
       <workItem from="1763944149691" duration="4270000" />
       <workItem from="1763986831732" duration="3000" />
       <workItem from="1763986916862" duration="413000" />
-      <workItem from="1763988810936" duration="9884000" />
+      <workItem from="1763988810936" duration="17893000" />
     </task>
     <task id="LOCAL-00001" summary="Added shield feature">
       <option name="closed" value="true" />
@@ -180,7 +188,15 @@
       <option name="project" value="LOCAL" />
       <updated>1764053069639</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="deleted bubble equip">
+      <option name="closed" value="true" />
+      <created>1764059493128</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1764059493128</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -195,6 +211,7 @@
     <MESSAGE value="shield working" />
     <MESSAGE value="bubble audio added" />
     <MESSAGE value="proper wav files" />
-    <option name="LAST_COMMIT_MESSAGE" value="proper wav files" />
+    <MESSAGE value="deleted bubble equip" />
+    <option name="LAST_COMMIT_MESSAGE" value="deleted bubble equip" />
   </component>
 </project>

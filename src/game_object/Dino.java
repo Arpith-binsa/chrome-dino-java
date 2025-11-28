@@ -67,9 +67,9 @@ public class Dino {
         shieldIcon = getImage("resources/Shield.png");
         jumpSound = new SoundManager("resources/jump.wav");
         jumpSound.startThread();
-        shieldEquipSound = new SoundManager("resources/BubbleEquip.mp3");
+        shieldEquipSound = new SoundManager("resources/BubbleEquip.wav");
         shieldEquipSound.startThread();
-        shieldPopSound = new SoundManager("resources/BubblePop.mp3");
+        shieldPopSound = new SoundManager("resources/BubblePop.wav");
         shieldPopSound.startThread();
         y = GROUND_Y - dinoJump.getHeight();
         maxY = y;

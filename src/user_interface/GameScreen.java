@@ -14,6 +14,7 @@ import javax.swing.JPanel;
 import game_object.Clouds;
 import game_object.Dino;
 import game_object.Land;
+import game_object.Rain;
 import game_object.Score;
 import manager.ControlsManager;
 import manager.EnemyManager;
@@ -49,11 +50,18 @@ public class GameScreen extends JPanel implements Runnable {
     private int invincibilityFrames = 0;
     private static final int INVINCIBILITY_DURATION = 30; // 0.3 seconds at 100 FPS
 
+    // Rain configuration
+    private static final int RAIN_START_SCORE = 500;
+    private static final int RAIN_DURATION = 3000; // 30 seconds (3000 frames at 100 FPS)
+    private int rainTimer = 0;
+    private boolean rainTriggered = false;
+
     private Controls controls;
     private Score score;
     private Dino dino;
     private Land land;
     private Clouds clouds;
+    private Rain rain;
     private EnemyManager eManager;
     private ShieldManager sManager;
     private SoundManager gameOverSound;
@@ -73,8 +81,9 @@ public class GameScreen extends JPanel implements Runnable {
         dino = new Dino(controls);
         land = new Land(this);
         clouds = new Clouds(this);
+        rain = new Rain(this);
         eManager = new EnemyManager(this);
-        sManager = new ShieldManager(this, dino); // Pass dino to ShieldManager
+        sManager = new ShieldManager(this, dino);
         gameOverSound = new SoundManager("resources/dead.wav");
         gameOverSound.startThread();
     }
@@ -141,12 +150,28 @@ public class GameScreen extends JPanel implements Runnable {
                 dino.updatePosition();
                 land.updatePosition();
                 clouds.updatePosition();
+                rain.updatePosition();
                 eManager.updatePosition();
                 sManager.updatePosition();
                 
                 // Decrease invincibility frames
                 if(invincibilityFrames > 0) {
                     invincibilityFrames--;
+                }
+
+                // Rain logic - trigger at score 500, last for 30 seconds
+                if(getScore() >= RAIN_START_SCORE && !rainTriggered) {
+                    rain.setRaining(true);
+                    rainTriggered = true;
+                    rainTimer = RAIN_DURATION;
+                }
+                
+                // Count down rain timer
+                if(rainTriggered && rainTimer > 0) {
+                    rainTimer--;
+                    if(rainTimer == 0) {
+                        rain.setRaining(false);
+                    }
                 }
 
                 // Check for shield collection
@@ -215,6 +240,12 @@ public class GameScreen extends JPanel implements Runnable {
             g.setColor(Color.YELLOW);
             g.drawString("INVINCIBLE: " + invincibilityFrames, (int)(SCREEN_WIDTH / 100), (int)(SCREEN_HEIGHT / 25) + 20);
         }
+        
+        // Show rain timer in debug mode
+        if(rain.isRaining()) {
+            g.setColor(Color.CYAN);
+            g.drawString("RAIN: " + (rainTimer / 100.0) + "s", (int)(SCREEN_WIDTH / 100), (int)(SCREEN_HEIGHT / 25) + 40);
+        }
     }
 
     private void startScreen(Graphics g) {
@@ -239,6 +270,8 @@ public class GameScreen extends JPanel implements Runnable {
         eManager.draw(g);
         dino.draw(g);
         score.draw(g);
+        rain.draw(g); // Draw rain on top of everything
+        rain.drawVignette(g); // Draw vignette effect last
         if(showHitboxes)
             drawDebugMenu(g);
     }
@@ -275,6 +308,9 @@ public class GameScreen extends JPanel implements Runnable {
             dino.resetDino();
             clouds.clearClouds();
             land.resetLand();
+            rain.setRaining(false);
+            rainTriggered = false;
+            rainTimer = 0;
             invincibilityFrames = 0; // Reset invincibility
             gameState = GameState.GAME_STATE_IN_PROGRESS;
         }
