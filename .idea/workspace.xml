@@ -4,15 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="56157df7-b2f8-42d9-88cd-9043e3906dc1" name="Changes" comment="deleted bubble equip">
+    <list default="true" id="56157df7-b2f8-42d9-88cd-9043e3906dc1" name="Changes" comment="rain sound">
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/chrome-dino-java5.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/game_object/Dino.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/game_object/Dino.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/manager/ShieldManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/manager/ShieldManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/user_interface/GameScreen$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/user_interface/GameScreen$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/manager/SoundManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/manager/SoundManager.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/user_interface/GameScreen.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/user_interface/GameScreen.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/best-scores.txt" beforeDir="false" afterPath="$PROJECT_DIR$/resources/best-scores.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game_object/Dino.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game_object/Dino.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/manager/ShieldManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/manager/ShieldManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/manager/SoundManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/manager/SoundManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/user_interface/GameScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/user_interface/GameScreen.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -60,15 +60,19 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Artifacts",
+    "onboarding.tips.debug.path": "/Users/arpithmadakkuni/chrome-dino-java5/src/src/Main.java",
+    "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RunManager">
-    <configuration name="GameWindow" type="Application" factoryName="Application" nameIsGenerated="true">
+    <configuration name="GameWindow" type="Application" factoryName="Application">
+      <option name="ALTERNATIVE_JRE_PATH" value="openjdk-25" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="user_interface.GameWindow" />
+      <module name="chrome-dino-java5" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="user_interface.*" />
@@ -98,7 +102,7 @@
       <workItem from="1763944149691" duration="4270000" />
       <workItem from="1763986831732" duration="3000" />
       <workItem from="1763986916862" duration="413000" />
-      <workItem from="1763988810936" duration="17893000" />
+      <workItem from="1763988810936" duration="23762000" />
     </task>
     <task id="LOCAL-00001" summary="Added shield feature">
       <option name="closed" value="true" />
@@ -196,7 +200,15 @@
       <option name="project" value="LOCAL" />
       <updated>1764059493128</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="rain sound">
+      <option name="closed" value="true" />
+      <created>1764359405867</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1764359405867</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -212,6 +224,7 @@
     <MESSAGE value="bubble audio added" />
     <MESSAGE value="proper wav files" />
     <MESSAGE value="deleted bubble equip" />
-    <option name="LAST_COMMIT_MESSAGE" value="deleted bubble equip" />
+    <MESSAGE value="rain sound" />
+    <option name="LAST_COMMIT_MESSAGE" value="rain sound" />
   </component>
 </project>

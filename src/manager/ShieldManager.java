@@ -12,7 +12,7 @@ public class ShieldManager {
     // Shield spawn configuration
     private static final double SHIELD_SPAWN_PERCENTAGE = 0.5; // Low spawn rate for rarity
     private static final int MINIMUM_DISTANCE_BETWEEN_SHIELDS = 2000; // Shields spawn far apart
-    private static final int MINIMUM_SCORE_FOR_SHIELD = 500; // Shields only appear after score 500
+    private static final int MINIMUM_SCORE_FOR_SHIELD = 300; // Shields only appear after score 500
 
     private double distanceBetweenShields = MINIMUM_DISTANCE_BETWEEN_SHIELDS;
     private double shieldSpawnPercentage = SHIELD_SPAWN_PERCENTAGE;

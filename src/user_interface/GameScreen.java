@@ -51,7 +51,7 @@ public class GameScreen extends JPanel implements Runnable {
     private static final int INVINCIBILITY_DURATION = 30; // 0.3 seconds at 100 FPS
 
     // Rain configuration
-    private static final int RAIN_START_SCORE = 500;
+    private static final int RAIN_START_SCORE = 500 ;
     private static final int RAIN_DURATION = 3000; // 30 seconds (3000 frames at 100 FPS)
     private int rainTimer = 0;
     private boolean rainTriggered = false;
@@ -191,6 +191,7 @@ public class GameScreen extends JPanel implements Runnable {
                         dino.dinoGameOver();
                         score.writeScore();
                         gameOverSound.play();
+                        rain.pause(); // Stop rain sound on game over
                     }
                 }
                 score.scoreUp();
@@ -338,10 +339,13 @@ public class GameScreen extends JPanel implements Runnable {
     }
 
     public void pressPauseAction() {
-        if(gameState == GameState.GAME_STATE_IN_PROGRESS)
+        if(gameState == GameState.GAME_STATE_IN_PROGRESS) {
             gameState = GameState.GAME_STATE_PAUSED;
-        else
+            rain.pause(); // Pause rain sound
+        } else if(gameState == GameState.GAME_STATE_PAUSED) {
             gameState = GameState.GAME_STATE_IN_PROGRESS;
+            rain.resume(); // Resume rain sound
+        }
     }
 
 }
