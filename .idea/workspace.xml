@@ -4,9 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="56157df7-b2f8-42d9-88cd-9043e3906dc1" name="Changes" comment="removed main.java">
+    <list default="true" id="56157df7-b2f8-42d9-88cd-9043e3906dc1" name="Changes" comment="added boss">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/manager/ShieldManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/manager/ShieldManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/user_interface/GameScreen$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/user_interface/GameScreen$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/user_interface/GameScreen.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/user_interface/GameScreen.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/user_interface/GameWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/user_interface/GameWindow.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game_object/Boss.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/user_interface/GameScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/user_interface/GameScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/user_interface/GameWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/user_interface/GameWindow.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +100,7 @@
       <workItem from="1763944149691" duration="4270000" />
       <workItem from="1763986831732" duration="3000" />
       <workItem from="1763986916862" duration="413000" />
-      <workItem from="1763988810936" duration="24761000" />
+      <workItem from="1763988810936" duration="29529000" />
     </task>
     <task id="LOCAL-00001" summary="Added shield feature">
       <option name="closed" value="true" />
@@ -209,7 +214,23 @@
       <option name="project" value="LOCAL" />
       <updated>1764566896681</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="added boss">
+      <option name="closed" value="true" />
+      <created>1764567826978</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1764567826978</updated>
+    </task>
+    <task id="LOCAL-00016" summary="added boss">
+      <option name="closed" value="true" />
+      <created>1764567870031</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1764567870031</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -227,6 +248,7 @@
     <MESSAGE value="deleted bubble equip" />
     <MESSAGE value="rain sound" />
     <MESSAGE value="removed main.java" />
-    <option name="LAST_COMMIT_MESSAGE" value="removed main.java" />
+    <MESSAGE value="added boss" />
+    <option name="LAST_COMMIT_MESSAGE" value="added boss" />
   </component>
 </project>
