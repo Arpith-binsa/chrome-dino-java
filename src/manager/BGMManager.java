@@ -42,7 +42,6 @@ public class BGMManager implements LineListener {
     }
     
     private void playNextTrack() {
-        // If we've played all tracks, shuffle and start over
         if(currentTrackIndex >= currentPlaylist.size()) {
             shufflePlaylist();
         }
@@ -51,30 +50,46 @@ public class BGMManager implements LineListener {
         currentTrackIndex++;
         
         try {
-            // Stop and close previous clip if exists
             if(currentClip != null) {
                 currentClip.close();
             }
             
-            // Load and play new track
             File audioFile = new File(trackPath);
+            
+            if(!audioFile.exists()) {
+                System.err.println("BGM file not found: " + trackPath);
+                return;
+            }
+            
+            System.out.println("Loading BGM: " + trackPath);
+            
             AudioInputStream audioStream = AudioSystem.getAudioInputStream(audioFile);
-            currentClip = AudioSystem.getClip();
+            AudioFormat format = audioStream.getFormat();
+            DataLine.Info info = new DataLine.Info(Clip.class, format);
+            
+            currentClip = (Clip) AudioSystem.getLine(info);
             currentClip.open(audioStream);
+            
+            // Set volume to 80%
+            if(currentClip.isControlSupported(FloatControl.Type.MASTER_GAIN)) {
+                FloatControl gainControl = (FloatControl) currentClip.getControl(FloatControl.Type.MASTER_GAIN);
+                float dB = (float) (Math.log(0.8) / Math.log(10.0) * 20.0);
+                gainControl.setValue(dB);
+            }
+            
             currentClip.addLineListener(this);
             currentClip.start();
             
             System.out.println("Now playing: " + trackPath);
             
         } catch(Exception e) {
-            System.err.println("Error playing BGM: " + e.getMessage());
+            System.err.println("Error playing BGM: " + trackPath);
             e.printStackTrace();
         }
     }
     
     @Override
     public void update(LineEvent event) {
-        // When track finishes, play next one
         if(event.getType() == LineEvent.Type.STOP) {
             if(currentClip != null && currentClip.getFramePosition() >= currentClip.getFrameLength() - 1) {
                 playNextTrack();
