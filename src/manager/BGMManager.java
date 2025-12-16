@@ -16,8 +16,8 @@ public class BGMManager implements LineListener {
     
     public BGMManager() {
         trackList = new ArrayList<>();
-        trackList.add("resources/Subwoofer Lullaby.wav");
-        trackList.add("resources/Biome Fest.wav");
+        trackList.add("resources/Subwoofer-Lullaby.wav");
+        trackList.add("resources/Biome-Fest.wav");
         trackList.add("resources/Watcher.wav");
         
         currentPlaylist = new ArrayList<>();

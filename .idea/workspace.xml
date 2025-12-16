@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="56157df7-b2f8-42d9-88cd-9043e3906dc1" name="Changes" comment="added bgm name change">
+    <list default="true" id="56157df7-b2f8-42d9-88cd-9043e3906dc1" name="Changes" comment="added bgm wav file conversion">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/manager/BGMManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/manager/BGMManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/production/chrome-dino-java5/user_interface/GameScreen$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/production/chrome-dino-java5/user_interface/GameScreen$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/production/chrome-dino-java5/user_interface/GameScreen.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/production/chrome-dino-java5/user_interface/GameScreen.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/production/chrome-dino-java5/user_interface/GameWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/production/chrome-dino-java5/user_interface/GameWindow.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/manager/BGMManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/manager/BGMManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -94,7 +99,7 @@
       <workItem from="1763944149691" duration="4270000" />
       <workItem from="1763986831732" duration="3000" />
       <workItem from="1763986916862" duration="413000" />
-      <workItem from="1763988810936" duration="29903000" />
+      <workItem from="1763988810936" duration="32849000" />
     </task>
     <task id="LOCAL-00001" summary="Added shield feature">
       <option name="closed" value="true" />
@@ -248,7 +253,15 @@
       <option name="project" value="LOCAL" />
       <updated>1764810280066</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="added bgm wav file conversion">
+      <option name="closed" value="true" />
+      <created>1764810651867</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1764810651867</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -269,6 +282,7 @@
     <MESSAGE value="added boss" />
     <MESSAGE value="added bgm" />
     <MESSAGE value="added bgm name change" />
-    <option name="LAST_COMMIT_MESSAGE" value="added bgm name change" />
+    <MESSAGE value="added bgm wav file conversion" />
+    <option name="LAST_COMMIT_MESSAGE" value="added bgm wav file conversion" />
   </component>
 </project>
