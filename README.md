@@ -5,6 +5,30 @@
 
 ![in-game-screenshot-3](screenshots/screenshot-3.png)
 
+![in-game-screenshot-3](screenshots/screenshot-4.jpeg)
+
+![in-game-screenshot-3](screenshots/screenshot-5.jpeg)
+
+
+
+
+
+## How to Run
+
+### Option 1: Download JAR (Easiest)
+1. Go to [Releases](https://github.com/Arpith-binsa/chrome-dino-java/releases)
+2. Download `chrome-dino-enhanced.jar`
+3. Run: `java -jar chrome-dino-enhanced.jar`
+
+### Option 2: From Source
+```bash
+cd chrome-dino-java
+javac -d bin src/**/*.java
+java -cp resources:bin user_interface.GameWindow
+```
+
+
+
 ## Description
 A Java version of Chrome Offline T-Rex Game. Some features not affecting gameplay is missing _(will be added soon!)_. Game is running on smooth **100 fps**.
 
