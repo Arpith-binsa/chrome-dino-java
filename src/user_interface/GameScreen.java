@@ -196,7 +196,7 @@ public class GameScreen extends JPanel implements Runnable {
                         dino.dinoGameOver();
                         score.writeScore();
                         gameOverSound.play();
-                        rain.pause(); // Stop rain sound on game over
+                        rain.pause(); // Stop rain sound on when player is dead
                     }
                 }
                 score.scoreUp();

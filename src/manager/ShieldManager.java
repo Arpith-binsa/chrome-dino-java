@@ -11,8 +11,8 @@ public class ShieldManager {
 
     // Shield spawn configuration
     private static final double SHIELD_SPAWN_PERCENTAGE = 0.5; // Low spawn rate for rarity
-    private static final int MINIMUM_DISTANCE_BETWEEN_SHIELDS = 2000; // Shields spawn far apart
-    private static final int MINIMUM_SCORE_FOR_SHIELD = 300; // Shields only appear after score 500
+    private static final int MINIMUM_DISTANCE_BETWEEN_SHIELDS = 2000; // Shields doesnt spawn everywhere
+    private static final int MINIMUM_SCORE_FOR_SHIELD = 300; // Shields only appear after score 300
 
     private double distanceBetweenShields = MINIMUM_DISTANCE_BETWEEN_SHIELDS;
     private double shieldSpawnPercentage = SHIELD_SPAWN_PERCENTAGE;
@@ -37,10 +37,7 @@ public class ShieldManager {
 
     public void updatePosition() {
         shield.updatePosition();
-        // Only spawn shield if:
-        // 1. Space is available
-        // 2. Player doesn't have a shield
-        // 3. Score is at least 500
+
         if(shield.spaceAvailable() && !dino.hasShield() && gameScreen.getScore() >= MINIMUM_SCORE_FOR_SHIELD) {
             shield.createShield();
         }

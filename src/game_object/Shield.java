@@ -62,7 +62,7 @@ public class Shield {
         for(Iterator<ShieldPowerUp> i = shields.iterator(); i.hasNext();) {
             ShieldPowerUp shield = i.next();
             shield.x += gameScreen.getSpeedX();
-            // Remove shields that go off screen
+            // When the Shield isnt collected and it goes off screen sometime it creates bugs, so here those shields are removed
             if((int)shield.x + shield.shieldImage.getWidth() < 0) {
                 i.remove();
             }
