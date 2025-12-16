@@ -37,6 +37,9 @@ A Java version of Chrome Offline T-Rex Game. Some features not affecting gamepla
   - Infinite Gameplay
   - Progressive Difficulty
   - Obstacles: Cactuses, Birds(Pterodactyl)
+  - Shield Power-up
+  - Rain Biome with Vignette effect
+  - New Background tracks
   - Jump / Duck
   - Sounds
   - Score & High Score _( File R/W )_
